@@ -13,3 +13,11 @@ assets/audio/ — Web playback copies of selected original tracks.
 The 112 analytics records are fictional and contain no employer or customer data.
 Audio playback begins only after a visitor presses play.
 Artwork and music are portfolio works, not open-source assets. No reuse license is granted.
+
+SEOCHEON edition (2026-10-14)
+SEOCHEON audio and seven artwork web copies were made from the owner's supplied
+Downloads files; originals were preserved. Credit: DJ KIMCHI x DJ ORCA.
+The page uses scroll-linked artwork, drifting light and gentle ambient motion.
+Use Pause motion to stop it. Device reduced-motion preferences are respected.
+The original four tracks, artwork archive, professional content, synthetic KPI
+data and public resume are retained. No external animation library is required.
