@@ -93,3 +93,23 @@ body.seocheon-body{background:#f2e8d9;color:var(--ink);isolation:isolate}
 @media(prefers-reduced-motion:reduce){.river-passage-art,.river-passage-light{animation:none!important;transform:none!important}}
 .seocheon-body .skip-link{background:#713d2e;color:#fff8ec}
 @media(max-width:760px){.motion-toggle{top:9px;right:18px;bottom:auto;min-height:29px;padding:5px 10px;font-size:.55rem;box-shadow:none}.seocheon-body .artist-nav{padding-top:15px}}
+/* Collection-led edition: the existing portfolio stays in front of the atmosphere. */
+.collection-body .hero-art-link{border-radius:2px;background:#efe4d3;padding:10px;border:1px solid #bca88f}
+.collection-body .hero-art-link img{aspect-ratio:1;object-fit:contain;animation:none}
+.collection-body .creative-intro h2{font-family:Georgia,serif;font-weight:400;font-size:2rem;margin:10px 0}
+.collection-body .creative-intro figcaption>p:not(.art-label){font: .84rem/1.65 Arial,sans-serif}
+.collection-body .creative-preview img{aspect-ratio:1;object-fit:contain;height:215px}
+.collection-body .home-art-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.collection-body .home-art-grid .art-image-button img{aspect-ratio:1;object-fit:contain}
+.collection-body .home-art-grid .art-caption-v2 h3{font-size:.83rem}
+.collection-body .home-art-grid .quiet-link{font-size:.7rem;margin-top:10px;display:inline-block}
+.collection-body .career-context>span:not(.journey-marker){display:block}
+.atmosphere-video{position:absolute;right:-4%;top:-8%;width:65%;height:120%;object-fit:cover;object-position:center 38%;opacity:calc(.12 + var(--journey) * .25);mix-blend-mode:multiply;mask-image:linear-gradient(90deg,transparent,#000 38%);filter:saturate(.75);pointer-events:none}
+.collection-body .practice-section{background:linear-gradient(#ece2d280,#eee4ea66 55%,#e9dcf14d)}
+@media(max-width:1050px){.collection-body .home-art-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.collection-body .home-art-grid .art-caption-v2 h3{font-size:.95rem}}
+@media(max-width:760px){.collection-body .creative-intro h2{font-size:1.5rem;margin:5px 0}.collection-body .creative-intro figcaption>p:not(.art-label){font-size:.73rem}.collection-body .creative-preview img{height:auto;aspect-ratio:1;object-fit:contain}.atmosphere-video{width:110%;right:-20%;opacity:calc(.09 + var(--journey) * .2)}}
+@media(max-width:500px){.collection-body .home-art-grid{grid-template-columns:1fr;gap:28px}}
+@media(prefers-reduced-motion:reduce){.atmosphere-video{display:none}}
+.collection-body .atmosphere-paper{background:linear-gradient(90deg,#f4ebded9,#eee2d340);opacity:calc(.9 - var(--journey) * .65)}
+.collection-body .atmosphere-video{opacity:calc(.18 + var(--journey) * .58);filter:saturate(.9)}
+.collection-body .gallery-intro{background:#f2e9dbd9}
