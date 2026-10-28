@@ -311,3 +311,106 @@ html{scrollbar-color:var(--line-strong) var(--paper)}
   .preview-values strong{font-size:1.6rem}
   .kpi-value{font-size:1.65rem}
 }
+
+/* Depth: the hero cover sits in a stack of artwork, and the cover wall drifts as it scrolls past.
+   Scroll motion uses CSS scroll timelines; browsers without them show the still layout. */
+.stage{position:relative;isolation:isolate}
+.stage .hero-cover{position:relative;z-index:2;width:78%;margin-left:11%;--d:.9}
+.stage figcaption{position:relative;z-index:4}
+.stage-card{position:absolute;display:block;border-radius:6px;object-fit:cover;pointer-events:none;box-shadow:0 30px 60px -30px rgba(30,15,5,.55)}
+.stage-back{z-index:1;width:42%;aspect-ratio:9/16;left:-8%;top:9%;rotate:-7deg;filter:saturate(.8) brightness(.95);--d:.5;--travel:120px}
+.stage-side{z-index:1;width:34%;aspect-ratio:9/16;right:-9%;top:-4%;rotate:6deg;filter:saturate(.75) brightness(.9);--d:.7;--travel:200px}
+.stage-front{z-index:3;width:36%;aspect-ratio:1;left:-4%;bottom:6%;rotate:-4deg;box-shadow:0 40px 70px -30px rgba(20,10,5,.7);--d:1.6;--travel:-160px}
+.stage-glow{position:absolute;z-index:0;border-radius:50%;filter:blur(50px);opacity:.55;pointer-events:none}
+.stage-glow-1{width:62%;aspect-ratio:1;background:#f2b48f;right:-16%;top:22%;--d:.3;--travel:90px}
+.stage-glow-2{width:48%;aspect-ratio:1;background:#c9d6c8;left:-18%;top:-6%;--d:.2;--travel:60px}
+.stage .hero-cover{--travel:-40px}
+.stage-card,.stage-glow,.stage .hero-cover{transform:translate(calc(var(--mx,0) * var(--d) * -26px),calc(var(--my,0) * var(--d) * -18px));transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+@keyframes drift{from{translate:0 0}to{translate:0 var(--travel)}}
+@keyframes drift-view{from{translate:0 var(--travel)}to{translate:0 calc(var(--travel) * -1)}}
+@keyframes bob{0%,100%{margin-top:0}50%{margin-top:calc(var(--amp) * -1)}}
+@keyframes bob-t{0%,100%{transform:none}50%{transform:translateY(calc(var(--amp) * -1))}}
+@media (prefers-reduced-motion:no-preference){
+  .stage-card,.stage-glow,.stage .hero-cover{animation:drift linear both;animation-timeline:scroll(root);animation-range:0 100vh}
+  .stage-front{animation:drift linear both,bob 8s ease-in-out infinite;animation-timeline:scroll(root),auto;animation-range:0 100vh,normal;--amp:12px}
+  .stage-side{animation:drift linear both,bob 11s ease-in-out -3s infinite;animation-timeline:scroll(root),auto;animation-range:0 100vh,normal;--amp:8px}
+  .cover-wall{overflow:visible}
+  .cover{--travel:30px;animation:drift-view linear both;animation-timeline:view();animation-range:cover}
+  .cover:nth-child(1){--travel:70px}
+  .cover:nth-child(2){--travel:24px;--amp:6px;animation:drift-view linear both,bob-t 9s ease-in-out infinite;animation-timeline:view(),auto;animation-range:cover,normal}
+  .cover:nth-child(3){--travel:56px}
+  .cover:nth-child(4){--travel:16px}
+  .cover:nth-child(5){--travel:48px;--amp:6px;animation:drift-view linear both,bob-t 12s ease-in-out -4s infinite;animation-timeline:view(),auto;animation-range:cover,normal}
+}
+@media (max-width:900px){
+  .stage{margin-top:12px}
+  .stage-back{width:34%;left:-4%;top:6%;--travel:50px}
+  .stage-side{width:28%;right:-4%;top:-3%;--travel:70px}
+  .stage-front{width:30%;left:0;bottom:12%;--travel:-60px}
+  .cover:nth-child(n){--travel:14px}
+}
+
+/* Motion borrowed in spirit from the reference sites, rebuilt in plain CSS (no libraries):
+   nav label wipe, rising cards on the work side, a darkening hand-off into the music world,
+   masked title letters, and cover art that is wiped in and settles as it scrolls past. */
+.nav-links a[data-label]{position:relative}
+.nav-links a[data-label]::after{content:attr(data-label);position:absolute;inset:0;display:inline-flex;align-items:center;padding:inherit;color:var(--apricot-ink);clip-path:inset(100% 0 0);transition:clip-path .45s var(--ease)}
+@media (hover:hover) and (pointer:fine){.nav-links a[data-label]:hover::after,.nav-links a[data-label]:focus-visible::after{clip-path:inset(0)}}
+.world-title{display:flex;overflow:hidden;padding-bottom:.04em}
+.world-title .ch{display:inline-block}
+.world-title .ch-gap{display:inline-block;width:.28em}
+.now-cover{transition:opacity .25s var(--ease)}
+.now-cover.is-swapping{opacity:.35}
+@keyframes rise{from{opacity:0;translate:0 32px}to{opacity:1;translate:0 0}}
+@keyframes letter{from{transform:translateY(105%)}to{transform:none}}
+@keyframes dusk{from{background-color:#e7ddcf}45%{background-color:#5a3d2e}to{background-color:#0c0a09}}
+@keyframes wipe{from{clip-path:inset(100% 0 0)}to{clip-path:inset(0)}}
+@keyframes settle{from{scale:1.22}to{scale:1}}
+@keyframes slow-zoom{from{scale:1.02}to{scale:1.14}}
+@media (prefers-reduced-motion:no-preference){
+  .hero-cover img{animation:slow-zoom linear both;animation-timeline:scroll(root);animation-range:0 100vh}
+  .case,.kpi-card,.habit-col,.experience-row{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 70%}
+  .kpi-card:nth-child(2){animation-range:entry 8% entry 78%}
+  .kpi-card:nth-child(3){animation-range:entry 16% entry 86%}
+  .kpi-card:nth-child(4){animation-range:entry 24% entry 94%}
+  .world{animation:dusk linear both;animation-timeline:view();animation-range:entry 0% entry 35%}
+  .world-title{view-timeline:--title block}
+  .world-title .ch{animation:letter linear both;animation-timeline:--title;animation-range:cover calc(12% + var(--i) * 3%) cover calc(34% + var(--i) * 3%)}
+  .cover img{animation:wipe linear both,settle linear both;animation-timeline:view(),view();animation-range:entry 0% entry 85%,entry 0% exit 40%}
+}
+
+/* Portal into the music world: a small window of SEOCHEON opens until it fills the screen,
+   the words split apart, and the frame darkens into the DJ KIMCHI section. Only shown where
+   scroll timelines exist and motion is allowed; everyone else gets the plain hand-off above. */
+.portal{display:none}
+@supports (animation-timeline:view()){
+  @media (prefers-reduced-motion:no-preference){
+    .portal{display:block;position:relative;height:230vh;background:var(--paper-2);view-timeline:--portal block}
+    .portal-pin{position:sticky;top:0;height:100vh;overflow:hidden;display:grid;place-items:center}
+    .portal-window{position:absolute;inset:0;background:#0c0a09;clip-path:circle(9vmin at 50% 50%);animation:portal-open linear both;animation-timeline:--portal;animation-range:contain 0% contain 80%}
+    .portal-window img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;animation:portal-settle linear both;animation-timeline:--portal;animation-range:contain 0% contain 80%}
+    .portal-window::after{content:"";position:absolute;inset:0;background:#0c0a09;opacity:0;animation:portal-dark linear both;animation-timeline:--portal;animation-range:contain 55% contain 100%}
+    .portal-word{position:relative;z-index:1;display:flex;gap:.3em;margin:0;font-family:var(--serif);font-weight:300;font-style:italic;font-size:clamp(3rem,11vw,10rem);line-height:1;letter-spacing:-.03em;color:var(--ink)}
+    .portal-word span{animation:split-l linear both;animation-timeline:--portal;animation-range:contain 4% contain 45%}
+    .portal-word span+span{animation-name:split-r}
+    .portal-pin::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background-image:var(--grain);opacity:0;animation:grain-in linear both;animation-timeline:--portal;animation-range:contain 55% contain 100%}
+    .world{animation:none;background-color:#0c0a09}
+  }
+}
+@keyframes portal-open{to{clip-path:circle(75% at 50% 50%)}}
+@keyframes portal-settle{from{scale:1.35}to{scale:1}}
+@keyframes portal-dark{to{opacity:1}}
+@keyframes grain-in{to{opacity:.09}}
+@keyframes split-l{to{translate:-45vw 0;opacity:0}}
+@keyframes split-r{to{translate:45vw 0;opacity:0}}
+
+/* DJ KIMCHI letters filled with cover art (an image, not video, to keep the page light). */
+@supports ((background-clip:text) or (-webkit-background-clip:text)){
+  .world-title .ch{background:linear-gradient(rgba(255,222,180,.18),rgba(255,222,180,.18)),url("assets/art/kan-ha-diskan-800.webp") center/cover fixed;-webkit-background-clip:text;background-clip:text;color:transparent}
+}
+
+/* Film grain over the music world: one tiny inline SVG, painted once, never animated.
+   The portal fades the same grain in so the two dark areas meet without a seam. */
+:root{--grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.world{position:relative;isolation:isolate}
+.world::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.09;background-image:var(--grain)}
