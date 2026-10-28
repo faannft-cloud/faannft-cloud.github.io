@@ -1,0 +1,14 @@
+main{position:relative;isolation:isolate}
+.red-thread{position:absolute;inset:0;z-index:12;pointer-events:none;overflow:hidden;max-width:100%;contain:layout style;opacity:.92}
+.red-thread path{fill:none;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.cord-glow{stroke:#e56c76;stroke-width:7;opacity:.24;filter:url(#cord-glow)}
+.cord-shadow{stroke:#391b27;stroke-width:4.1;opacity:.28}
+.cord-body{stroke:url(#cord-color);stroke-width:2.6}
+.cord-fiber{stroke-width:.65;stroke-dasharray:1.4 3.8 2 4.5 1 3;opacity:.72}
+.fiber-a{stroke:#efb3a1;stroke-dashoffset:0}
+.fiber-b{stroke:#6d1f34;stroke-dashoffset:2.4;stroke-width:1.1}
+.cord-edge{stroke:#ffc6b1;stroke-width:.35;opacity:.45;stroke-dasharray:17 8 3 13}
+.thread-head{opacity:.8}.loose-glow{stroke:#ee777d;stroke-width:4;filter:url(#tip-glow);opacity:.3}.loose-end{stroke:#a4374d;stroke-width:1.4}.loose-fiber{stroke:#efb1a7;stroke-width:.45;stroke-dasharray:1 3}
+.thread-mist{opacity:.55}.thread-still .thread-head,.thread-still .thread-mist{display:none}
+@media(max-width:760px){.red-thread{opacity:.82}.cord-shadow{stroke-width:3}.cord-body{stroke-width:2}.cord-glow{stroke-width:5;opacity:.18}.thread-mist{opacity:.30}.thread-head{opacity:.55}}
+@media(prefers-reduced-motion:reduce){.thread-head,.thread-mist{display:none}}

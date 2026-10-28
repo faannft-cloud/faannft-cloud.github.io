@@ -33,35 +33,6 @@
   window.addEventListener('resize', drawPreview);
 })();
 
-// Hero artwork leans slightly toward the pointer (mouse only; off when motion is reduced).
-(() => {
-  if (!matchMedia('(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)').matches) return;
-  const root = document.documentElement;
-  window.addEventListener('pointermove', e => {
-    root.style.setProperty('--mx', (e.clientX / innerWidth - .5).toFixed(3));
-    root.style.setProperty('--my', (e.clientY / innerHeight - .5).toFixed(3));
-  }, { passive: true });
-})();
-
-// Hovering a track previews its cover in the large frame; leaving the list puts the selected cover back.
-(() => {
-  const list = document.querySelector('.track-list');
-  const cover = document.querySelector('[data-now-cover]');
-  if (!list || !cover || !matchMedia('(hover: hover) and (pointer: fine)').matches) return;
-  const show = src => {
-    if (!src || cover.getAttribute('src') === src) return;
-    cover.classList.add('is-swapping');
-    const next = new Image();
-    next.onload = () => { cover.src = src; cover.classList.remove('is-swapping'); };
-    next.src = src;
-  };
-  list.querySelectorAll('.track-row').forEach(row => row.addEventListener('pointerenter', () => show(row.dataset.cover)));
-  list.addEventListener('pointerleave', () => {
-    const selected = list.querySelector('.track-row.is-selected') || list.querySelector('.track-row');
-    show(selected.dataset.cover);
-  });
-})();
-
 // Scroll-timeline fallback. Mirrors the animation-range values in kimchi.css: each entry is
 // [element, variable, timeline element, range], and the range is a pair of [phase, percent].
 (() => {

@@ -11,8 +11,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,50..100;1,9..144,300..700,50..100&family=Instrument+Sans:wght@400..650&display=swap">
 <link rel="stylesheet" href="kimchi.css?v=2">
+<link rel="stylesheet" href="atmosphere.css?v=3">
+<link rel="stylesheet" href="motion-story.css?v=5">
+<link rel="stylesheet" href="red-thread.css?v=5">
+<link rel="stylesheet" href="rich-motion.css?v=1">
 </head>
-<body>
+<body class="atmosphere-edition">
 <a class="skip-link" href="#main">Skip to content</a>
 
 
@@ -32,71 +36,36 @@
 </header>
 
 <main id="main">
+<button class="motion-toggle" type="button" aria-pressed="false">Pause effects</button>
 
-<section class="hero" id="top" aria-labelledby="hero-title">
-  <div class="wrap hero-grid">
-    <div class="hero-copy">
-      <h1 id="hero-title">Jinsung Kim</h1>
-      <p class="hero-role">Customer operations &amp; quality.<br><span>After hours, <a href="#listen">DJ KIMCHI</a>.</span></p>
-      <p class="hero-intro">For eight years I've worked where customer problems turn into numbers. I've led 14-person support teams, reviewed service quality, and used case analysis to decide what to coach. At night I make music and cover art. Both jobs run on the same habit: make something, check it honestly, then revise it.</p>
-      <ul class="hero-facts" aria-label="Highlights">
-        <li>Team Leader, Concentrix · 2024–2026</li>
-        <li>Q4 2025 MVP Team Leader</li>
-        <li>Korean / English · Kuala Lumpur</li>
-      </ul>
-      <div class="actions">
-        <a class="button" href="#work">See the work</a>
-        <a class="button ghost" href="assets/Jinsung_Kim_Resume.pdf" download>Download résumé</a>
-      </div>
-    </div>
-
-    <figure class="hero-art stage">
-      <span class="stage-glow stage-glow-1" aria-hidden="true"></span>
-      <span class="stage-glow stage-glow-2" aria-hidden="true"></span>
-      <img class="stage-card stage-back" src="assets/art/seocheon-river-440.webp" alt="" width="440" height="782" decoding="async" fetchpriority="low" aria-hidden="true">
-      <img class="stage-card stage-side" src="assets/art/seocheon-smoke-440.webp" alt="" width="440" height="782" decoding="async" fetchpriority="low" aria-hidden="true">
-      <a class="hero-cover" href="#listen" aria-label="Go to DJ KIMCHI music and artwork">
-        <img src="assets/art/seocheon-cover.webp" width="900" height="1600" alt="SEOCHEON cover artwork by DJ KIMCHI × DJ ORCA" fetchpriority="high">
+<section class="motion-opening" id="top" aria-labelledby="intro-name">
+<div class="opening-pin"><div class="opening-copy">
+<h1 id="intro-name">Jinsung <em>Kim.</em></h1>
+<p class="opening-role">Customer operations.<br>Quality. Team leadership.</p>
+<p class="opening-bio">I lead teams, look for the story behind the numbers, and turn case reviews into practical next steps.</p>
+<div class="opening-career"><p class="career-evidence">8 years in operations &amp; quality<br>14-person team leadership · Korean / English</p>
+<div class="career-paths"><a class="button" href="#work">Explore my work <span aria-hidden="true">↗</span></a><a class="button ghost" href="assets/Jinsung_Kim_Resume.pdf" download>Download résumé</a></div></div>
+<a class="opening-music-link" href="#listen"><span class="tiny-record" aria-hidden="true"></span>After hours, DJ KIMCHI <span aria-hidden="true">↗</span></a>
+</div><div class="opening-art"><figure class="hero-art constellation" data-scene="seocheon">
+      <div class="art-orbit" aria-hidden="true"><i></i><i></i><i></i></div>
+      <img class="echo echo-left" src="assets/art/seocheon-river-440.webp" alt="" aria-hidden="true" width="440" height="782">
+      <img class="echo echo-right" src="assets/art/seocheon-smoke-440.webp" alt="" aria-hidden="true" width="440" height="782">
+      <a class="portal-cover" href="#listen" aria-label="Explore DJ KIMCHI music">
+        <img id="scene-cover" src="assets/art/seocheon-cover.webp" alt="SEOCHEON artwork, DJ KIMCHI × DJ ORCA" width="900" height="1600" fetchpriority="high">
+        <span class="art-light" aria-hidden="true"></span>
       </a>
-      <img class="stage-card stage-front" src="assets/art/genesis-protocol-400.webp" alt="" width="400" height="400" decoding="async" fetchpriority="low" aria-hidden="true">
-      <figcaption><span>SEOCHEON <span lang="ko">서천</span> · DJ KIMCHI × DJ ORCA</span><a href="#listen">Listen <span aria-hidden="true">↓</span></a></figcaption>
-    </figure>
-  </div>
-</section>
-
-<section class="habit" aria-labelledby="habit-title">
-  <div class="wrap">
-    <h2 id="habit-title">Same loop, day and night.</h2>
-    <div class="habit-grid">
-      <div class="habit-col">
-        <h3>At work</h3>
-        <ol>
-          <li><strong>Read the numbers.</strong> Find the change worth asking about.</li>
-          <li><strong>Pull the cases behind them.</strong> Check what a percentage can't explain.</li>
-          <li><strong>Agree one action.</strong> Name an owner and a date, then follow up.</li>
-        </ol>
-      </div>
-      <svg class="habit-loop" viewBox="0 0 160 160" aria-hidden="true">
-        <circle style="stroke:var(--line-strong)" cx="80" cy="80" r="56" fill="none" stroke-width="2" stroke-dasharray="4 7"/>
-        <path style="stroke:var(--apricot)" d="M80 24a56 56 0 0 1 56 56" fill="none" stroke-width="4" stroke-linecap="round"/>
-        <path style="stroke:var(--apricot)" d="m129 71 7 9 7-9" fill="none" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-        <path style="stroke:var(--leaf-deep)" d="M80 136a56 56 0 0 1-56-56" fill="none" stroke-width="4" stroke-linecap="round"/>
-        <path style="stroke:var(--leaf-deep)" d="m31 89-7-9-7 9" fill="none" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-        <text x="80" y="76" text-anchor="middle" class="loop-label">make</text>
-        <text x="80" y="96" text-anchor="middle" class="loop-label">check · revise</text>
-      </svg>
-      <div class="habit-col">
-        <h3>In the studio</h3>
-        <ol>
-          <li><strong>Write the brief.</strong> Mood, references, what the track is for.</li>
-          <li><strong>Make many versions.</strong> Sound and cover art move together.</li>
-          <li><strong>Listen, cut, revise.</strong> Keep the one that survives a second listen.</li>
-        </ol>
-      </div>
-    </div>
-  </div>
-</section>
-
+      <div class="scene-note"><span id="scene-name">SEOCHEON · 서천</span><span>DJ KIMCHI × DJ ORCA</span></div>
+      <figcaption class="scene-controls"><span>Choose an atmosphere</span><div role="group" aria-label="Artwork atmosphere">
+        <button type="button" data-scene-choice="seocheon" aria-pressed="true">Ritual</button>
+        <button type="button" data-scene-choice="genesis" aria-pressed="false">Cosmos</button>
+        <button type="button" data-scene-choice="present" aria-pressed="false">Ember</button>
+      </div></figcaption>
+    </figure><p class="opening-statement"><span>A mind for detail.</span><em>A sense of rhythm.</em></p></div>
+<div class="opening-bottom"><span>SCROLL TO EXPLORE <b aria-hidden="true">↓</b></span><span class="opening-progress" aria-hidden="true"><i></i></span><a href="#work">Operations, quality &amp; creative practice</a></div></div></section>
+<div class="career-route wrap" aria-label="Explore career capabilities">
+<a href="#case1-title"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="18" r="8"/><path d="M15 54V43a17 17 0 0 1 34 0v11M9 26a6 6 0 1 1 4-11M5 48v-8a10 10 0 0 1 8-10"/></svg><span>Lead people<small>Team leadership &amp; coaching</small></span><b aria-hidden="true">↗</b></a>
+<a href="#demo"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M10 51h44M13 42l11-15 12 5 16-19"/><circle cx="24" cy="27" r="3"/><circle cx="36" cy="32" r="3"/></svg><span>Read the pattern<small>Case analysis &amp; quality</small></span><b aria-hidden="true">↗</b></a>
+<a href="#case2-title"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="8" y="8" width="16" height="16" rx="3"/><rect x="40" y="40" width="16" height="16" rx="3"/><path d="M24 16h24v24M16 24v24h24m-8-6 8 6-8 6"/></svg><span>Build the workflow<small>Reporting &amp; practical AI tools</small></span><b aria-hidden="true">↗</b></a></div>
 <section class="work" id="work" aria-labelledby="work-title">
   <div class="wrap">
     <div class="section-head">
@@ -162,6 +131,7 @@
 </section>
 
 <section class="demo" id="demo" aria-labelledby="demo-title">
+<details class="demo-disclosure"><summary>Explore the interactive KPI demo <span>Synthetic data · filters, trends &amp; coaching example</span></summary>
   <div class="wrap">
     <div class="section-head">
       <h2 id="demo-title">Explore the numbers, then ask why.</h2>
@@ -222,17 +192,60 @@
       </ol>
     </section>
   </div>
+</details>
 </section>
 
-<div class="portal" aria-hidden="true">
-  <div class="portal-pin">
-    <div class="portal-window"><img src="assets/art/seocheon-cover.webp" alt="" width="900" height="1600" loading="lazy" decoding="async"></div>
-    <p class="portal-word"><span>After</span><span>hours</span></p>
+<section class="experience-section" id="experience" aria-labelledby="experience-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="experience-title">Experience</h2>
+      <p>Customer operations, policy support, quality and team leadership across advertising, travel and content.</p>
+    </div>
+    <div class="experience">
+      <div class="experience-row"><div class="experience-org">Concentrix<small>Nov 2024 – May 2026 · Kuala Lumpur</small></div><div class="experience-detail"><h3>Team Leader</h3><p>Led a 14-person B2B digital advertising support team. Built reporting tools and performance trackers, reviewed customer feedback, and used RCA to guide coaching. Received the Q4 2025 MVP Team Leader award.</p></div></div>
+      <div class="experience-row"><div class="experience-org">IGT Solutions<small>Aug 2023 – Aug 2024 · Kuala Lumpur</small></div><div class="experience-detail"><h3>Team Lead Manager – Flight Operations</h3><p>Managed a 14-person flight operations team for a global online travel agency project. Coordinated service delivery, coached team members, and oversaw the Quality Analyst's work.</p></div></div>
+      <div class="experience-row"><div class="experience-org">Concentrix<small>Oct 2022 – Aug 2023 · Kuala Lumpur</small></div><div class="experience-detail"><h3>Senior Subject Matter Expert</h3><p>Supported new staff with policies and live cases, monitored team KPIs, and prepared reports in Excel and Google Sheets.</p></div></div>
+      <div class="experience-row"><div class="experience-org">Accenture<small>Jan 2018 – Aug 2022 · Kuala Lumpur</small></div><div class="experience-detail"><h3>Quality Analyst · Feb 2021 – Aug 2022</h3><p>Reviewed Korean-market content moderation quality and reported issues with policy application.</p><h3 class="subrole">Subject Matter Expert · Jun 2019 – Feb 2021</h3><p>Explained policies, supported difficult cases, and mentored colleagues.</p><h3 class="subrole">Content Analyst · Jan 2018 – Jun 2019</h3><p>Reviewed Korean- and English-language content and handled Tier 2 escalations. Received the 2018 Appreciation Award as Top Korean Reviewer.</p></div></div>
+      <div class="experience-row"><div class="experience-org">Euco International<small>Jan 2016 – Jul 2016 · Rotterdam</small></div><div class="experience-detail"><h3>International Trade Intern</h3><p>Supported communication between European suppliers and Korean clients, market research, quotations, and client coordination.</p></div></div>
+    </div>
   </div>
-</div>
+</section>
+
+<section class="habit" aria-labelledby="habit-title">
+  <div class="wrap">
+    <h2 id="habit-title">Same loop, day and night.</h2>
+    <div class="habit-grid">
+      <div class="habit-col">
+        <h3>At work</h3>
+        <ol>
+          <li><strong>Read the numbers.</strong> Find the change worth asking about.</li>
+          <li><strong>Pull the cases behind them.</strong> Check what a percentage can't explain.</li>
+          <li><strong>Agree one action.</strong> Name an owner and a date, then follow up.</li>
+        </ol>
+      </div>
+      <svg class="habit-loop" viewBox="0 0 160 160" aria-hidden="true">
+        <circle style="stroke:var(--line-strong)" cx="80" cy="80" r="56" fill="none" stroke-width="2" stroke-dasharray="4 7"/>
+        <path style="stroke:var(--apricot)" d="M80 24a56 56 0 0 1 56 56" fill="none" stroke-width="4" stroke-linecap="round"/>
+        <path style="stroke:var(--apricot)" d="m129 71 7 9 7-9" fill="none" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path style="stroke:var(--leaf-deep)" d="M80 136a56 56 0 0 1-56-56" fill="none" stroke-width="4" stroke-linecap="round"/>
+        <path style="stroke:var(--leaf-deep)" d="m31 89-7-9-7 9" fill="none" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="80" y="76" text-anchor="middle" class="loop-label">make</text>
+        <text x="80" y="96" text-anchor="middle" class="loop-label">check · revise</text>
+      </svg>
+      <div class="habit-col">
+        <h3>In the studio</h3>
+        <ol>
+          <li><strong>Write the brief.</strong> Mood, references, what the track is for.</li>
+          <li><strong>Make many versions.</strong> Sound and cover art move together.</li>
+          <li><strong>Listen, cut, revise.</strong> Keep the one that survives a second listen.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="world" id="listen" aria-labelledby="listen-title">
-  <div class="wrap">
+  <div class="world-haze" aria-hidden="true"></div><div class="wrap">
     <h2 id="listen-title" class="world-title" aria-label="DJ KIMCHI"><span class="ch" style="--i:0" aria-hidden="true">D</span><span class="ch" style="--i:1" aria-hidden="true">J</span><span class="ch-gap" aria-hidden="true"> </span><span class="ch" style="--i:3" aria-hidden="true">K</span><span class="ch" style="--i:4" aria-hidden="true">I</span><span class="ch" style="--i:5" aria-hidden="true">M</span><span class="ch" style="--i:6" aria-hidden="true">C</span><span class="ch" style="--i:7" aria-hidden="true">H</span><span class="ch" style="--i:8" aria-hidden="true">I</span></h2>
     <div class="world-intro">
       <p>Music and cover art I make after hours. I plan a track and its artwork together, make many versions, and cut until one holds up.</p>
@@ -250,7 +263,7 @@
   </div>
 
   <div class="wrap">
-    <h3 class="world-sub">Listen</h3>
+    <div class="listening-title"><h3 class="world-sub">Listen</h3><div class="sound-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
     <p class="world-note">Five tracks. Nothing plays until you choose one.</p>
     <div class="music-player" data-music-player>
       <figure class="now-playing">
@@ -274,26 +287,33 @@
   </div>
 </section>
 
-<section class="experience-section" id="experience" aria-labelledby="experience-title">
-  <div class="wrap">
-    <div class="section-head">
-      <h2 id="experience-title">Experience</h2>
-      <p>Customer operations, policy support, quality and team leadership across advertising, travel and content.</p>
+<section class="about-section" id="about" aria-labelledby="about-title">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <h2 id="about-title">The person<br>behind the work.</h2>
+      <p class="hero-role">Customer operations &amp; quality.<br><span>After hours, <a href="#listen">DJ KIMCHI</a>.</span></p>
+      <p class="hero-intro">For eight years I've worked where customer problems turn into numbers. I've led 14-person support teams, reviewed service quality, and used case analysis to decide what to coach. At night I make music and cover art. Both jobs run on the same habit: make something, check it honestly, then revise it.</p>
+      <a class="listen-shortcut" href="#listen"><span class="tiny-record" aria-hidden="true"></span>Step into my sound <span aria-hidden="true">↗</span></a>
+      <ul class="hero-facts" aria-label="Highlights">
+        <li>Team Leader, Concentrix · 2024–2026</li>
+        <li>Q4 2025 MVP Team Leader</li>
+        <li>Korean / English · Kuala Lumpur</li>
+      </ul>
+      <div class="actions">
+        <a class="button" href="#work">See the work</a>
+        <a class="button ghost" href="assets/Jinsung_Kim_Resume.pdf" download>Download résumé</a>
+      </div>
     </div>
-    <div class="experience">
-      <div class="experience-row"><div class="experience-org">Concentrix<small>Nov 2024 – May 2026 · Kuala Lumpur</small></div><div class="experience-detail"><h3>Team Leader</h3><p>Led a 14-person B2B digital advertising support team. Built reporting tools and performance trackers, reviewed customer feedback, and used RCA to guide coaching. Received the Q4 2025 MVP Team Leader award.</p></div></div>
-      <div class="experience-row"><div class="experience-org">IGT Solutions<small>Aug 2023 – Aug 2024 · Kuala Lumpur</small></div><div class="experience-detail"><h3>Team Lead Manager – Flight Operations</h3><p>Managed a 14-person flight operations team for a global online travel agency project. Coordinated service delivery, coached team members, and oversaw the Quality Analyst's work.</p></div></div>
-      <div class="experience-row"><div class="experience-org">Concentrix<small>Oct 2022 – Aug 2023 · Kuala Lumpur</small></div><div class="experience-detail"><h3>Senior Subject Matter Expert</h3><p>Supported new staff with policies and live cases, monitored team KPIs, and prepared reports in Excel and Google Sheets.</p></div></div>
-      <div class="experience-row"><div class="experience-org">Accenture<small>Jan 2018 – Aug 2022 · Kuala Lumpur</small></div><div class="experience-detail"><h3>Quality Analyst · Feb 2021 – Aug 2022</h3><p>Reviewed Korean-market content moderation quality and reported issues with policy application.</p><h3 class="subrole">Subject Matter Expert · Jun 2019 – Feb 2021</h3><p>Explained policies, supported difficult cases, and mentored colleagues.</p><h3 class="subrole">Content Analyst · Jan 2018 – Jun 2019</h3><p>Reviewed Korean- and English-language content and handled Tier 2 escalations. Received the 2018 Appreciation Award as Top Korean Reviewer.</p></div></div>
-      <div class="experience-row"><div class="experience-org">Euco International<small>Jan 2016 – Jul 2016 · Rotterdam</small></div><div class="experience-detail"><h3>International Trade Intern</h3><p>Supported communication between European suppliers and Korean clients, market research, quotations, and client coordination.</p></div></div>
-    </div>
+
+    
   </div>
 </section>
 
 <section class="contact" id="contact" aria-labelledby="contact-title">
   <div class="wrap contact-grid">
     <div>
-      <h2 id="contact-title">Let's talk.</h2>
+      
+      <h2 id="contact-title">Let's make<br><em>something matter.</em></h2>
       <p>I'm looking for work that connects customer operations, quality and practical uses of AI. Happy to talk about music too.</p>
     </div>
     <div class="contact-links">
@@ -312,9 +332,14 @@
 
 <script src="data.js"></script>
 <script src="analytics.js"></script>
-<script src="home.js?v=2"></script>
+<script src="home.js?v=3"></script>
 <script src="dashboard.js"></script>
 <script src="music.js"></script>
-<script src="kimchi.js"></script>
+<script src="kimchi.js?v=3"></script>
+<script src="atmosphere.js?v=3"></script>
+<script src="motion-story.js?v=5"></script>
+<script src="editorial.js?v=1"></script>
+<script src="red-thread.js?v=5"></script>
+<script src="rich-motion.js?v=1"></script>
 </body>
 </html>

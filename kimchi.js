@@ -10,7 +10,7 @@
   audios.forEach(a => ['play', 'pause', 'ended'].forEach(ev => a.addEventListener(ev, update)));
 
   // Sections rise in once; content is visible by default if this never runs.
-  const targets = document.querySelectorAll('.case, .habit-grid, .kpi-grid, .cover-wall, .music-player, .experience-row');
+  const targets = document.querySelectorAll('.habit-grid, .music-player');
   if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   targets.forEach(t => t.classList.add('reveal'));
   const io = new IntersectionObserver(entries => {
