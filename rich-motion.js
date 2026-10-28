@@ -1,6 +1,7 @@
 /* Progressive enhancement only: no hidden waiting state and no scroll remapping. */
 (() => {
   'use strict';
+if(document.documentElement.classList.contains('mobile-motion'))return;
   const root=document.documentElement, body=document.body;
   const reduced=matchMedia('(prefers-reduced-motion: reduce)');
   const running=new Set(),revealed=new WeakSet(),visible=new Set();

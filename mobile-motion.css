@@ -1,0 +1,15 @@
+/* No full-document SVG textures, moving filters, or touch-hover paint work. */
+.mobile-motion .site-header{background:var(--paper);backdrop-filter:none;-webkit-backdrop-filter:none}
+.mobile-cord{display:block;width:180px;height:48px;margin:0 auto 18px;pointer-events:none;contain:layout paint}
+.mobile-cord svg{width:100%;height:100%;fill:none;stroke:#a33749;stroke-width:2.3;stroke-linecap:round}
+.mobile-cord .mobile-fiber{stroke:#edaf96;stroke-width:.55;stroke-dasharray:2 4}
+.mobile-motion .world .mobile-cord svg,.mobile-motion .habit .mobile-cord svg{stroke:#dd7d83}
+.mobile-motion .opening-art .art-light,.mobile-motion .art-orbit,.mobile-motion .world:before{display:none}
+.mobile-motion .world-haze{inset:0 0 auto;height:650px;transform:none;translate:none;scale:none}
+.mobile-motion .constellation,.mobile-motion .opening-art .echo,.mobile-motion .kinetic-icon svg,.mobile-motion .sig-flow{animation:none!important}
+.mobile-motion .opening-art .constellation{transform:none}
+.mobile-motion .opening-art .portal-cover img{transform:none}
+.mobile-motion .cover-wall .cover,.mobile-motion .cover-wall:hover .cover,.mobile-motion .cover img,.mobile-motion .cover:hover img{filter:none!important;transition:none!important}
+.mobile-motion .case-visual:after{display:none}
+.mobile-motion .kpi-card{animation:none!important;opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.mobile-cord{opacity:1;transform:none}}

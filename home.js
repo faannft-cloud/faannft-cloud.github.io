@@ -30,13 +30,14 @@
     chart.setAttribute('aria-label', 'Synthetic weekly CSAT. ' + description.join('; ') + '. The dashboard includes the full data table.');
   }
   drawPreview();
-  window.addEventListener('resize', drawPreview);
+  let previewWidth=chart.clientWidth;
+  window.addEventListener('resize',()=>{if(chart.clientWidth!==previewWidth){previewWidth=chart.clientWidth;drawPreview();}});
 })();
 
 // Scroll-timeline fallback. Mirrors the animation-range values in kimchi.css: each entry is
 // [element, variable, timeline element, range], and the range is a pair of [phase, percent].
 (() => {
-  if (CSS.supports('animation-timeline: view()') || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (document.documentElement.classList.contains('mobile-motion') || CSS.supports('animation-timeline: view()') || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   document.documentElement.classList.add('sd-fallback');
   const $ = s => [...document.querySelectorAll(s)];
   const items = [];

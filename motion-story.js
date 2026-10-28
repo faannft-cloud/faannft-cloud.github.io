@@ -87,7 +87,7 @@ function paint(){
   opening.classList.toggle('motion-paused',paused);
   opening.classList.toggle('motion-reduced',reduce.matches);
   // Pause freezes the visual timeline without removing page space.
-  if(document.hidden||paused)return;
+  if(document.hidden||paused||root.classList.contains('mobile-motion'))return;
   const r=opening.getBoundingClientRect();
   const travel=Math.max(1,opening.offsetHeight-pin.offsetHeight);
   const progress=reduce.matches?0:Math.max(0,Math.min(1,(navHeight-r.top)/travel));
@@ -105,7 +105,7 @@ function syncMotion(){
   updateIconMotion();
   request();
 }
-addEventListener('scroll',request,{passive:true});
+if(!root.classList.contains('mobile-motion'))addEventListener('scroll',request,{passive:true});
 addEventListener('resize',measureHeader);
 document.addEventListener('visibilitychange',syncMotion);
 reduce.addEventListener('change',syncMotion);

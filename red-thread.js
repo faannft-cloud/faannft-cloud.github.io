@@ -1,6 +1,7 @@
 /* One continuous cord, revealed by viewport depth rather than page percentage. */
 (() => {
 'use strict';
+if(document.documentElement.classList.contains('mobile-motion'))return;
 const main=document.querySelector('main');if(!main)return;
 const ns='http://www.w3.org/2000/svg',root=document.documentElement;
 const reduced=matchMedia('(prefers-reduced-motion: reduce)');
