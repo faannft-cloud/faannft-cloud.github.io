@@ -1,0 +1,14 @@
+/* claude_v2: brings the art archive into the same voice as the home page (type, brand, controls). */
+.artist-body h1,.artist-body h2,.artist-body h3{font-family:"Fraunces",Georgia,serif;font-variation-settings:"SOFT" 100,"opsz" 96;letter-spacing:-.025em}
+.artist-body{font-family:"Instrument Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.artist-brand{display:inline-flex;align-items:center;gap:10px;font-family:"Fraunces",Georgia,serif;text-transform:none;letter-spacing:-.02em;font-size:1.2rem;font-weight:600}
+.artist-brand::before{content:"";width:26px;height:26px;background:url("assets/jk-mark.svg") center/contain no-repeat}
+.artist-brand span{display:none}
+.artist-menu a{text-transform:none;letter-spacing:0;font-size:.93rem;min-height:44px;display:inline-flex;align-items:center}
+.artist-menu .nav-resume{border-radius:999px;border:1.5px solid #231d18}
+.art-button,.outline-button{border-radius:999px}
+.art-label{font-family:"Instrument Sans",sans-serif;letter-spacing:.02em;text-transform:none;font-weight:600}
+::selection{background:#f6c9b2;color:#231d18}
+/* Stronger selectors: the older archive sheets style these with body-level classes. */
+body.artist-body :is(h1,h2,h3){font-family:"Fraunces",Georgia,serif}
+body.artist-body .artist-brand{text-transform:none;font-family:"Fraunces",Georgia,serif}
