@@ -14,9 +14,10 @@
 <link rel="stylesheet" href="atmosphere.css?v=3">
 <link rel="stylesheet" href="motion-story.css?v=5">
 <link rel="stylesheet" href="rich-motion.css?v=1">
-<link rel="stylesheet" href="mobile-motion.css?v=1">
-<link rel="stylesheet" href="scene-motion.css?v=1">
+<link rel="stylesheet" href="mobile-motion.css?v=3">
+<link rel="stylesheet" href="scene-motion.css?v=2">
 <link rel="stylesheet" href="career-motion.css?v=1">
+<link rel="stylesheet" href="craft-motion.css?v=1">
 </head>
 <body class="atmosphere-edition">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -28,10 +29,10 @@
       <img src="assets/jk-mark.svg" alt="" width="28" height="28">Jinsung Kim
     </a>
     <nav class="nav-links" aria-label="Main navigation">
-      <a href="#work" data-label="Work">Work</a>
-      <a href="#listen" data-label="DJ KIMCHI">DJ KIMCHI</a>
-      <a href="#experience" data-label="Experience">Experience</a>
-      <a href="#contact" data-label="Contact">Contact</a>
+      <a href="#work" data-label="Work" aria-label="Work">Work</a>
+      <a href="#listen" data-label="DJ KIMCHI" aria-label="DJ KIMCHI">DJ KIMCHI</a>
+      <a href="#experience" data-label="Experience" aria-label="Experience">Experience</a>
+      <a href="#contact" data-label="Contact" aria-label="Contact">Contact</a>
       <a class="nav-resume" href="assets/Jinsung_Kim_Resume.pdf" download>Résumé</a>
     </nav>
   </div>
@@ -283,20 +284,20 @@
     <p class="world-note">Five tracks. Nothing plays until you choose one.</p>
     <div class="music-player" data-music-player>
       <figure class="now-playing">
-        <img class="now-cover" data-now-cover src="assets/art/present-engraved-exploration-800.webp" alt="PRESENT cover artwork" width="1254" height="1254" loading="lazy">
-        <figcaption><span class="now-label">Selected track</span><h3 data-now-title>PRESENT</h3><p data-now-credit>Artwork: DJ KIMCHI × DJ ORCA</p></figcaption>
+        <img class="now-cover" data-now-cover src="assets/art/seocheon-cover.webp" alt="SEOCHEON cover artwork" width="1254" height="1254" loading="lazy">
+        <figcaption><span class="now-label">Selected track</span><h3 data-now-title>SEOCHEON · 서천</h3><p data-now-credit>Artwork: DJ KIMCHI × DJ ORCA</p></figcaption>
       </figure>
       <div class="music-controls">
         <ol class="track-list" aria-label="Selected DJ KIMCHI tracks">
-          <li><button class="track-row" type="button" data-track="present" data-title="PRESENT" data-src="assets/audio/present.m4a" data-cover="assets/art/present-engraved-exploration-800.webp" data-credit="DJ KIMCHI × DJ ORCA" aria-label="Play PRESENT"><img src="assets/art/present-engraved-exploration-thumb.webp" alt="" width="48" height="48" loading="lazy"><span><span class="track-name">PRESENT</span><span class="track-subtitle">DJ KIMCHI · 5:05</span></span><span class="track-action" data-track-action aria-hidden="true">Play</span></button></li>
-          <li><button class="track-row" type="button" data-track="genesis-protocol" data-title="GENESIS PROTOCOL" data-src="assets/audio/genesis-protocol.m4a" data-cover="assets/art/genesis-protocol-800.webp" data-credit="DJ KIMCHI × DJ ORCA" aria-label="Play GENESIS PROTOCOL"><img src="assets/art/genesis-protocol-thumb.webp" alt="" width="48" height="48" loading="lazy"><span><span class="track-name">GENESIS PROTOCOL</span><span class="track-subtitle">DJ KIMCHI · 3:12</span></span><span class="track-action" data-track-action aria-hidden="true">Play</span></button></li>
-          <li><button class="track-row" type="button" data-track="protocol-breathline" data-title="PROTOCOL: BREATHLINE" data-src="assets/audio/protocol-breathline.m4a" data-cover="assets/art/protocol-breathline-800.webp" data-credit="DJ KIMCHI × DJ ORCA" aria-label="Play PROTOCOL: BREATHLINE"><img src="assets/art/protocol-breathline-thumb.webp" alt="" width="48" height="48" loading="lazy"><span><span class="track-name">PROTOCOL: BREATHLINE</span><span class="track-subtitle">DJ KIMCHI · 4:45</span></span><span class="track-action" data-track-action aria-hidden="true">Play</span></button></li>
-          <li><button class="track-row" type="button" data-track="kan-ha-diskan" data-title="KAN HA DISKAN" data-src="assets/audio/kan-ha-diskan.m4a" data-cover="assets/art/kan-ha-diskan-800.webp" data-credit="DJ KIMCHI" aria-label="Play KAN HA DISKAN"><img src="assets/art/kan-ha-diskan-thumb.webp" alt="" width="48" height="48" loading="lazy"><span><span class="track-name">KAN HA DISKAN</span><span class="track-subtitle">DJ KIMCHI · 4:24</span></span><span class="track-action" data-track-action aria-hidden="true">Play</span></button></li>
           <li><button class="track-row" type="button" data-track="seocheon" data-title="SEOCHEON · 서천" data-src="assets/audio/seocheon.m4a" data-cover="assets/art/seocheon-cover.webp" data-credit="DJ KIMCHI × DJ ORCA" aria-label="Play SEOCHEON · 서천"><img src="assets/art/seocheon-cover-thumb.webp" alt="" width="48" height="48" loading="lazy"><span><span class="track-name">SEOCHEON <span lang="ko">서천</span></span><span class="track-subtitle">DJ KIMCHI × DJ ORCA · 4:11</span></span><span class="track-action" data-track-action aria-hidden="true">Play</span></button></li>
+          <li><button class="track-row" type="button" data-track="genesis-protocol" data-title="GENESIS PROTOCOL" data-src="assets/audio/genesis-protocol.m4a" data-cover="assets/art/genesis-protocol-800.webp" data-credit="DJ KIMCHI × DJ ORCA" aria-label="Play GENESIS PROTOCOL"><img src="assets/art/genesis-protocol-thumb.webp" alt="" width="48" height="48" loading="lazy"><span><span class="track-name">GENESIS PROTOCOL</span><span class="track-subtitle">DJ KIMCHI · 3:12</span></span><span class="track-action" data-track-action aria-hidden="true">Play</span></button></li>
+          <li><button class="track-row" type="button" data-track="present" data-title="PRESENT" data-src="assets/audio/present.m4a" data-cover="assets/art/present-engraved-exploration-800.webp" data-credit="DJ KIMCHI × DJ ORCA" aria-label="Play PRESENT"><img src="assets/art/present-engraved-exploration-thumb.webp" alt="" width="48" height="48" loading="lazy"><span><span class="track-name">PRESENT</span><span class="track-subtitle">DJ KIMCHI · 5:05</span></span><span class="track-action" data-track-action aria-hidden="true">Play</span></button></li>
+          <li><button class="track-row" type="button" data-track="kan-ha-diskan" data-title="KAN HA DISKAN" data-src="assets/audio/kan-ha-diskan.m4a" data-cover="assets/art/kan-ha-diskan-800.webp" data-credit="DJ KIMCHI" aria-label="Play KAN HA DISKAN"><img src="assets/art/kan-ha-diskan-thumb.webp" alt="" width="48" height="48" loading="lazy"><span><span class="track-name">KAN HA DISKAN</span><span class="track-subtitle">DJ KIMCHI · 4:24</span></span><span class="track-action" data-track-action aria-hidden="true">Play</span></button></li>
+          <li><button class="track-row" type="button" data-track="protocol-breathline" data-title="PROTOCOL: BREATHLINE" data-src="assets/audio/protocol-breathline.m4a" data-cover="assets/art/protocol-breathline-800.webp" data-credit="DJ KIMCHI × DJ ORCA" aria-label="Play PROTOCOL: BREATHLINE"><img src="assets/art/protocol-breathline-thumb.webp" alt="" width="48" height="48" loading="lazy"><span><span class="track-name">PROTOCOL: BREATHLINE</span><span class="track-subtitle">DJ KIMCHI · 4:45</span></span><span class="track-action" data-track-action aria-hidden="true">Play</span></button></li>
         </ol>
-        <audio controls preload="none" src="assets/audio/present.m4a" aria-label="PRESENT audio player">Your browser does not support audio playback.</audio>
+        <audio controls preload="none" src="assets/audio/seocheon.m4a" aria-label="SEOCHEON audio player">Your browser does not support audio playback.</audio>
         <p class="playback-status" data-playback-status role="status" aria-live="polite">Select a track to listen. Playback starts when you press play.</p>
-        <a class="audio-file-link" data-audio-link href="assets/audio/present.m4a">Open audio file</a>
+        <a class="audio-file-link" data-audio-link href="assets/audio/seocheon.m4a">Open audio file</a>
       </div>
     </div>
     <p class="listen-foot">Growth studies, alternate covers and the ten-frame PRESENT sequence are in the <a href="dj-kimchi.html">full art archive</a>.</p>
@@ -357,7 +358,8 @@
 <script src="motion-story.js?v=6"></script>
 <script src="editorial.js?v=1"></script>
 <script src="rich-motion.js?v=3"></script>
-<script src="scene-motion.js?v=1"></script>
+<script src="scene-motion.js?v=2"></script>
 <script src="career-motion.js?v=1"></script>
+<script src="craft-motion.js?v=1"></script>
 </body>
 </html>

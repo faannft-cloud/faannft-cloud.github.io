@@ -1,0 +1,16 @@
+/* Editorial motion: words unfold, source signals converge, record sleeves settle. */
+.folio-word-window{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.12em;margin-bottom:-.12em}
+.folio-word{display:inline-block;transform-origin:0 100%}
+.career-route a{position:relative}
+.career-route a:after{content:'';position:absolute;left:0;bottom:0;width:100%;height:2px;background:#9e553d;transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.16,1,.3,1)}
+.career-route a:hover:after,.career-route a:focus-visible:after{transform:scaleX(1)}
+.signal-packet{fill:#ae5638;stroke:#f8eddb;stroke-width:1.5;opacity:0;pointer-events:none}
+.now-playing{perspective:900px}
+.now-cover{transform-origin:15% 50%;backface-visibility:hidden}
+.track-row .track-action{transition:transform .2s ease}
+.track-row:hover .track-action,.track-row:focus-visible .track-action{transform:translateX(3px)}
+.contact-links a{overflow:hidden}
+.contact-links a:after{content:'↗';display:inline-block;margin-left:12px;transition:transform .3s cubic-bezier(.16,1,.3,1)}
+.contact-links a:hover:after,.contact-links a:focus-visible:after{transform:translate(4px,-4px)}
+@media(prefers-reduced-motion:reduce){.career-route a:after,.track-row .track-action,.contact-links a:after{transition:none;transform:none}.signal-packet{display:none}}
+html.effects-paused .career-route a:after,html.effects-paused .track-row .track-action,html.effects-paused .contact-links a:after{transition:none}

@@ -13,3 +13,9 @@
 .mobile-motion .case-visual:after{display:none}
 .mobile-motion .kpi-card{animation:none!important;opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.mobile-cord{opacity:1;transform:none}}
+
+/* Keep mobile menu jumps short; finger scrolling and scene motion stay native. */
+html.mobile-motion{scroll-behavior:auto}
+
+/* Preserve every navigation target on narrow phones without horizontal overflow. */
+@media(max-width:360px){html.mobile-motion .nav-links{width:100%;margin:0;gap:0}html.mobile-motion .nav-links a{font-size:12px;padding:0 4px}html.mobile-motion .nav-links .nav-resume{padding:0 7px;margin-left:0}}

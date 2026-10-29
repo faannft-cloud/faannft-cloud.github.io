@@ -16,7 +16,7 @@
 .gate-copy h2{font:400 clamp(54px,7.8vw,112px)/.98 var(--serif);letter-spacing:-.035em;margin:0 0 36px;text-shadow:0 4px 24px #0007}
 .gate-copy h2 em{font-weight:400;color:#e7b77b}
 .gate-copy a{color:#fff3da;border-bottom:1px solid #c5b497;padding:10px 0;font-size:15px}
-.gate-door{position:absolute;inset:0 auto 0 0;width:50.05%;z-index:2;pointer-events:none;background-image:linear-gradient(#0e1f1933,#0e1f1966),url('assets/art/seocheon-cover.webp');background-size:200% 100%,200% auto;background-position:center,left 38%;background-repeat:no-repeat;background-color:#15221b;box-shadow:8px 0 24px #0005;will-change:transform}
+.gate-door{position:absolute;inset:0 auto 0 0;width:50.05%;z-index:2;pointer-events:none;background-image:linear-gradient(#0e1f1933,#0e1f1966),url('assets/art/seocheon-cover.webp');background-size:200% 100%,200% auto;background-position:center,left 38%;background-repeat:no-repeat;background-color:#15221b;box-shadow:8px 0 24px #0005;will-change:auto}
 .door-right{left:auto;right:0;background-position:center,right 38%;box-shadow:-8px 0 24px #0005}
 .gate-invitation{position:absolute;z-index:3;bottom:9%;left:0;width:100%;text-align:center;color:#fff3dc;font-size:14px;pointer-events:none;text-shadow:0 2px 15px #000}
 .gate-invitation em{display:block;font:400 clamp(30px,4vw,52px)/1.2 var(--serif);margin-top:8px}
@@ -35,3 +35,6 @@ html.effects-paused .gate-door,html.effects-paused .gate-invitation{display:none
 .gate-pin:focus-within .door-left{transform:translateX(-103%)!important}
 .gate-pin:focus-within .door-right{transform:translateX(103%)!important}
 .gate-pin:focus-within .gate-invitation{opacity:0!important}
+
+.scene-gate.scene-active .gate-door{will-change:transform}
+html.effects-paused .gate-door{will-change:auto}
