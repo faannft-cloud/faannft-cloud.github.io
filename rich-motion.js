@@ -21,7 +21,7 @@ if(document.documentElement.classList.contains('mobile-motion'))return;
     const span=document.createElement('span');span.className='rich-letter';
     span.textContent=el.textContent;el.replaceChildren(span);
   });
-  const reveals=[...document.querySelectorAll('.motion-heading,#habit-title,#about-title,#contact-title,.world-title,.case-visual,.opening-copy h1,.opening-statement')];
+  const reveals=[...document.querySelectorAll('.motion-heading,#habit-title,#about-title,#contact-title,.world-title,.case-visual:not(.career-console):not(.career-flow),.opening-copy h1,.opening-statement')];
   function reveal(el){
     if(revealed.has(el))return;
     revealed.add(el);

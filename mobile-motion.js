@@ -5,7 +5,7 @@
   root.classList.add('mobile-motion');
   const reduce=matchMedia('(prefers-reduced-motion: reduce)'),active=new Set();
   const stopped=()=>document.hidden||reduce.matches||root.classList.contains('effects-paused');
-  const targets=[...document.querySelectorAll('.opening-copy h1,.opening-art,.section-head h2,#experience-title,#habit-title,#listen-title,#about-title,#contact-title,.case-visual,.cover-wall .cover')];
+  const targets=[...document.querySelectorAll('.opening-copy h1,.opening-art,.section-head h2,#experience-title,#habit-title,#listen-title,#about-title,#contact-title,.case-visual:not(.career-console):not(.career-flow),.cover-wall .cover')];
   function play(el){
     if(stopped()||!el.animate)return;
     const cord=el.classList.contains('mobile-cord');

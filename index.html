@@ -16,6 +16,7 @@
 <link rel="stylesheet" href="rich-motion.css?v=1">
 <link rel="stylesheet" href="mobile-motion.css?v=1">
 <link rel="stylesheet" href="scene-motion.css?v=1">
+<link rel="stylesheet" href="career-motion.css?v=1">
 </head>
 <body class="atmosphere-edition">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -85,7 +86,7 @@
         </dl>
         <a class="text-link" href="#demo">Try the method on a synthetic dashboard <span aria-hidden="true">↓</span></a>
       </div>
-      <a class="case-visual demo-preview" href="#demo" aria-label="Open the synthetic KPI demo">
+      <div class="case-visual demo-preview career-console" aria-label="Synthetic KPI comparison">
         <span class="demo-badge">Synthetic data · demo</span>
         <span class="preview-values">
           <span><strong id="preview-csat">—</strong><small>CSAT</small></span>
@@ -93,8 +94,11 @@
           <span><strong id="preview-sla">—</strong><small>SLA</small></span>
         </span>
         <svg id="preview-chart" viewBox="0 0 620 116" role="img" aria-label="Synthetic weekly CSAT; the dashboard below has the full table"></svg>
-        <span class="preview-foot">14 fictional agents · 8 weeks</span>
-      </a>
+        <div class="console-controls" role="group" aria-label="Compare synthetic team and agent data"><button type="button" data-preview-agent="all" aria-pressed="true">All 14 agents</button><button type="button" data-preview-agent="A07" aria-pressed="false">Agent A07</button></div>
+        <p class="console-context" aria-live="polite">Team view · 8 weeks</p>
+        <span class="preview-foot">Fictional data · not employer results</span>
+        <a class="console-link" href="#demo">Explore the full dashboard ↗</a>
+      </div>
     </article>
 
     <article class="case case-flip" aria-labelledby="case2-title">
@@ -109,7 +113,7 @@
           <div><dt>Status</dt><dd>First scheduled run on 28 Oct 2026. No impact claimed yet.</dd></div>
         </dl>
       </div>
-      <figure class="case-visual signal-visual">
+      <figure class="case-visual signal-visual career-flow" data-flow="sources">
         <svg viewBox="0 0 420 270" role="img" aria-labelledby="signal-desc">
           <title id="signal-desc">Diagram: 40 channels feed a step that finds shared themes, which produces a study note at 8 a.m.</title>
           <g class="sig-channels">
@@ -125,6 +129,8 @@
           <path d="M324 98h56M324 112h68M324 126h46M324 140h62M324 154h38" class="sig-lines"/>
           <text x="358" y="198" class="sig-cap">08:00 study note</text>
         </svg>
+        <div class="flow-controls" role="group" aria-label="Explore the signal desk workflow"><button type="button" data-flow-step="sources" aria-pressed="true">Sources</button><button type="button" data-flow-step="themes" aria-pressed="false">Shared themes</button><button type="button" data-flow-step="note" aria-pressed="false">Study note</button></div>
+        <figcaption class="flow-caption" aria-live="polite">Read 40 public Korean crypto and US-stock Telegram channels.</figcaption>
       </figure>
     </article>
 
@@ -340,7 +346,7 @@
 </section>
 </main>
 
-<script src="mobile-motion.js?v=2"></script>
+<script src="mobile-motion.js?v=3"></script>
 <script src="data.js"></script>
 <script src="analytics.js"></script>
 <script src="home.js?v=4"></script>
@@ -350,7 +356,8 @@
 <script src="atmosphere.js?v=3"></script>
 <script src="motion-story.js?v=6"></script>
 <script src="editorial.js?v=1"></script>
-<script src="rich-motion.js?v=2"></script>
+<script src="rich-motion.js?v=3"></script>
 <script src="scene-motion.js?v=1"></script>
+<script src="career-motion.js?v=1"></script>
 </body>
 </html>
