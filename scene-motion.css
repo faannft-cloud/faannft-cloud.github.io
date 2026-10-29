@@ -1,0 +1,37 @@
+/* Record sleeve, opening stage, and a close-up artwork viewer. */
+.opening-art .constellation{perspective:1000px;transform:none!important}
+.opening-art .portal-cover{left:8%;width:59%;height:345px;border-radius:3px;transform:rotate(-7deg)!important;box-shadow:12px 22px 28px #15291f35;z-index:3}
+.opening-art .portal-cover img{transform:none!important;object-position:center 32%}
+.opening-art .echo{opacity:.45;width:19%;height:115px;z-index:0}
+.opening-art .echo-left{left:0;top:40%}.opening-art .echo-right{right:1%;top:2%}
+.vinyl-disc{position:absolute;z-index:2;top:9%;left:27%;width:60%;aspect-ratio:1;border-radius:50%;background:repeating-radial-gradient(circle at center,#151b19 0 2px,#2d3630 2.5px 3px,#0e1713 4px 6px);box-shadow:8px 16px 25px #0a1a1830;transform:translate3d(12%,0,0) rotate(20deg);overflow:hidden}
+.vinyl-disc:before{content:'';position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 35deg,transparent,#d9d9b72c 13%,transparent 28%,transparent 50%,#f4e9bb35 64%,transparent 78%)}
+.vinyl-disc img{position:absolute;inset:31%;width:38%;height:38%;object-fit:cover;border-radius:50%}
+.vinyl-disc i{position:absolute;top:49%;left:49%;width:2%;height:2%;border-radius:50%;background:var(--paper)}
+.opening-art .scene-note{z-index:4;bottom:82px;right:7%;transform:rotate(4deg)}
+.scene-gate{height:160svh;background:#101e1a;position:relative}
+.gate-pin{position:sticky;top:var(--nav-height,72px);height:calc(100svh - var(--nav-height,72px));min-height:450px;overflow:hidden;isolation:isolate;background:#101e1a}
+.gate-universe{position:absolute;width:100%;height:100%;inset:0;object-fit:cover;opacity:.58}
+.gate-copy{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#f6eedc;padding:28px}
+.gate-copy h2{font:400 clamp(54px,7.8vw,112px)/.98 var(--serif);letter-spacing:-.035em;margin:0 0 36px;text-shadow:0 4px 24px #0007}
+.gate-copy h2 em{font-weight:400;color:#e7b77b}
+.gate-copy a{color:#fff3da;border-bottom:1px solid #c5b497;padding:10px 0;font-size:15px}
+.gate-door{position:absolute;inset:0 auto 0 0;width:50.05%;z-index:2;pointer-events:none;background-image:linear-gradient(#0e1f1933,#0e1f1966),url('assets/art/seocheon-cover.webp');background-size:200% 100%,200% auto;background-position:center,left 38%;background-repeat:no-repeat;background-color:#15221b;box-shadow:8px 0 24px #0005;will-change:transform}
+.door-right{left:auto;right:0;background-position:center,right 38%;box-shadow:-8px 0 24px #0005}
+.gate-invitation{position:absolute;z-index:3;bottom:9%;left:0;width:100%;text-align:center;color:#fff3dc;font-size:14px;pointer-events:none;text-shadow:0 2px 15px #000}
+.gate-invitation em{display:block;font:400 clamp(30px,4vw,52px)/1.2 var(--serif);margin-top:8px}
+.cover-wall .cover{cursor:zoom-in}.cover-wall .cover:focus-visible{outline:3px solid #e6bb80;outline-offset:5px}
+.art-inspector{border:0;padding:0;background:#101c18;color:#f5efde;width:min(1100px,94vw);max-width:94vw;height:min(880px,92svh);max-height:92svh;box-shadow:0 25px 90px #0008}
+.art-inspector::backdrop{background:#07120fe8}
+.inspector-layout{display:grid;grid-template-rows:auto 1fr auto;height:100%;padding:20px;gap:14px}
+.inspector-toolbar,.inspector-footer{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.inspector-toolbar h2{font:400 25px var(--serif);margin:0}.inspector-toolbar button,.inspector-footer button{background:transparent;color:inherit;border:1px solid #a6b5a266;border-radius:30px;padding:10px 18px;min-height:44px;cursor:pointer}
+.inspector-image{min-height:0;width:100%;height:100%;object-fit:contain}.inspector-footer a{color:#e3c091;font-size:13px}.inspector-footer>div{display:flex;gap:8px}
+@media(max-width:760px){.opening-art .portal-cover{height:285px;left:3%;width:62%}.vinyl-disc{top:12%;left:26%;width:65%}.opening-art .constellation{min-height:410px}.opening-art .scene-note{bottom:70px;right:0}.opening-art .echo{display:none}.scene-gate{height:130svh}.gate-pin{height:76svh;min-height:380px}.gate-copy h2{font-size:58px}.gate-door{background-size:200% 100%,auto 100%;background-position:center,42% center}.door-right{background-position:center,58% center}.inspector-layout{padding:14px}.inspector-toolbar h2{font-size:19px}.inspector-footer{flex-wrap:wrap}}
+@media(prefers-reduced-motion:reduce){.scene-gate{height:auto}.gate-pin{position:relative;top:0;height:65svh}.gate-door,.gate-invitation{display:none}.vinyl-disc{transform:translateX(20%)!important}}
+.opening-art .opening-statement{margin-top:20px}
+.opening-statement{margin-top:20px}
+html.effects-paused .gate-door,html.effects-paused .gate-invitation{display:none}
+.gate-pin:focus-within .door-left{transform:translateX(-103%)!important}
+.gate-pin:focus-within .door-right{transform:translateX(103%)!important}
+.gate-pin:focus-within .gate-invitation{opacity:0!important}

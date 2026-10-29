@@ -5,13 +5,7 @@
   root.classList.add('mobile-motion');
   const reduce=matchMedia('(prefers-reduced-motion: reduce)'),active=new Set();
   const stopped=()=>document.hidden||reduce.matches||root.classList.contains('effects-paused');
-  const titles=[...document.querySelectorAll('#work-title,#experience-title,#habit-title,#listen-title,#about-title,#contact-title')];
-  titles.forEach(title=>{
-    const cord=document.createElement('span');cord.className='mobile-cord';cord.setAttribute('aria-hidden','true');
-    cord.innerHTML='<svg viewBox="0 0 180 48" focusable="false"><path d="M2 8 C30 8 32 36 68 30 S116 2 128 14 C146 32 114 40 112 24 S146 18 178 40"/><path class="mobile-fiber" d="M2 8 C30 8 32 36 68 30 S116 2 128 14 C146 32 114 40 112 24 S146 18 178 40"/></svg>';
-    title.before(cord);
-  });
-  const targets=[...document.querySelectorAll('.opening-copy h1,.opening-art,.mobile-cord,.section-head h2,#experience-title,#habit-title,#listen-title,#about-title,#contact-title,.case-visual,.cover-wall .cover')];
+  const targets=[...document.querySelectorAll('.opening-copy h1,.opening-art,.section-head h2,#experience-title,#habit-title,#listen-title,#about-title,#contact-title,.case-visual,.cover-wall .cover')];
   function play(el){
     if(stopped()||!el.animate)return;
     const cord=el.classList.contains('mobile-cord');
