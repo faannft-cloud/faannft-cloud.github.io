@@ -24,3 +24,10 @@ and data-saver visitors receive the static artwork instead.
 Use Pause motion to stop it. Device reduced-motion preferences are respected.
 The original four tracks, artwork archive, professional content, synthetic KPI
 data and public resume are retained. No external animation library is required.
+
+Motion update (2026-10-30)
+reel-upgrade.css/js add split-text heading reveals, a breathing artwork blob, layered
+section waves, a skills marquee, spotlight cards, magnetic buttons, a scroll progress bar
+and a cursor ring. They use GSAP 3.13 (ScrollTrigger, SplitText), self-hosted in vendor/
+under GreenSock's standard no-charge license. Reduced-motion visitors and Pause effects
+switch them off; touch devices skip the pointer effects.

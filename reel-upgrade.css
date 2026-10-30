@@ -1,0 +1,52 @@
+/* Reel upgrade (2026-10-30): GSAP text reveals, organic blob + layered waves, spotlight cards,
+   magnetic buttons, a skills marquee, scroll progress and a cursor ring. Layered on top of the
+   existing motion files; everything here is decorative and switches off with reduced motion
+   or the Pause effects button. */
+
+.reel-progress{position:fixed;inset:0 0 auto;height:3px;z-index:1000;pointer-events:none}
+.reel-progress i{display:block;height:100%;background:linear-gradient(90deg,var(--leaf-deep),var(--apricot),var(--chili));transform:scaleX(0);transform-origin:0 50%}
+
+/* Split headings: masks keep italic overhangs and descenders visible */
+.reel-motion :is(h1,h2) [class*="line-mask"]{padding:0 .12em .1em;margin:0 -.12em -.1em}
+.reel-split-pending{visibility:hidden}
+
+/* Hero blob (Haikei-style), sits behind the artwork */
+.reel-blob{position:absolute;left:50%;top:50%;width:min(118%,640px);aspect-ratio:1;translate:-50% -52%;z-index:0;pointer-events:none;filter:drop-shadow(0 40px 60px rgba(120,60,30,.14))}
+.reel-blob svg{width:100%;height:100%;overflow:visible}
+.reel-blob .reel-blob-ring{fill:none;stroke:var(--line-strong);stroke-width:1;stroke-dasharray:2 7;opacity:.7}
+.reel-blob stop{transition:stop-color 1.2s var(--ease)}
+
+/* Layered waves between sections */
+.reel-wave{display:block;position:relative;height:clamp(70px,9vw,140px);overflow:hidden;margin:-1px 0;pointer-events:none}
+.reel-wave svg{position:absolute;inset:auto 0 0;width:100%;height:100%}
+.reel-wave path{will-change:transform}
+.reel-wave svg{bottom:-2px;height:calc(100% + 2px)}
+.reel-wave+section{border-top-color:transparent!important}
+
+/* Skills marquee (21st.dev-style) */
+.reel-marquee{overflow:hidden;border-block:1px solid var(--line);padding:18px 0;margin:8px 0 0;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.reel-track{display:flex;width:max-content;gap:34px;align-items:center;white-space:nowrap;font:400 clamp(22px,2.4vw,34px)/1 var(--serif);color:var(--ink-2)}
+.reel-track em{font-style:italic;color:var(--apricot-ink)}
+.reel-track i{font-style:normal;color:var(--apricot);font-size:.55em}
+
+/* Spotlight cards */
+.reel-spot{position:relative;isolation:isolate}
+.reel-glow{position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:-1;opacity:0;transition:opacity .35s var(--ease);
+  background:radial-gradient(320px circle at var(--mx,50%) var(--my,50%),rgba(232,135,95,.2),rgba(167,194,126,.08) 45%,transparent 70%)}
+.reel-spot:hover>.reel-glow{opacity:1}
+.kpi-card.reel-spot,.case.reel-spot{border-radius:var(--radius)}
+
+/* Cursor ring (fine pointers only, native cursor stays visible) */
+.reel-cursor{position:fixed;left:0;top:0;width:34px;height:34px;margin:-17px 0 0 -17px;border:1.5px solid var(--apricot);border-radius:50%;
+  pointer-events:none;z-index:999;opacity:0;transition:opacity .3s,width .3s var(--ease),height .3s var(--ease),margin .3s var(--ease),background-color .3s}
+.reel-cursor.is-on{opacity:.85}
+.reel-cursor.is-link{width:64px;height:64px;margin:-32px 0 0 -32px;background:rgba(232,135,95,.12)}
+.world .reel-cursor,.reel-cursor.on-dark{border-color:#e7b77b}
+
+.effects-paused .reel-cursor,.effects-paused .reel-glow{display:none}
+@media (hover:none),(pointer:coarse){.reel-cursor{display:none}}
+@media (prefers-reduced-motion:reduce){.reel-cursor,.reel-progress{display:none}.reel-split-pending{visibility:visible}
+  .reel-marquee{-webkit-mask-image:none;mask-image:none}.reel-track{flex-wrap:wrap;width:auto;white-space:normal;justify-content:center;padding:0 16px;row-gap:12px}
+  .reel-track [data-dup]{display:none}}
+@media (max-width:760px){.reel-track{gap:22px}.reel-marquee{padding:14px 0}.reel-blob{width:122%}}
